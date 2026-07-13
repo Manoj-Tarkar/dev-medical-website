@@ -4,16 +4,27 @@ import toast from 'react-hot-toast'
 import { FaPhoneAlt, FaWhatsapp, FaEnvelope, FaMapMarkerAlt, FaClock, FaFacebookF, FaInstagram, FaPaperPlane } from 'react-icons/fa'
 import { BUSINESS } from '../../constants/business'
 import { NAV_LINKS } from '../../constants/navlinks'
-
+import { sendEmail } from '../../services/emailjs'
 export default function Footer() {
   const [email, setEmail] = useState('')
 
-  const handleSubscribe = (e) => {
-    e.preventDefault()
-    if (!email.trim()) return
-    toast.success('Subscribed! You will now receive our health tips & offers.')
-    setEmail('')
+ const handleSubscribe = async (e) => {
+  e.preventDefault()
+
+  if (!email.trim()) return
+
+  try {
+    await sendEmail({
+      user_email: email,
+    })
+
+    toast.success("Subscribed successfully!")
+    setEmail("")
+  } catch (err) {
+    console.error(err)
+    toast.error("Subscription failed")
   }
+}
 
   return (
     <footer className="bg-dark text-slate-300">
