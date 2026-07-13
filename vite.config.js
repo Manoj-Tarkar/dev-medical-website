@@ -17,9 +17,13 @@ export default defineConfig({
         name: 'DEV Medical',
         short_name: 'DEV Medical',
         description: 'DEV Medical - Genuine medicines and home delivery.',
+
+        start_url: '/',
+        scope: '/',
+
+        display: 'standalone',
         theme_color: '#16a34a',
         background_color: '#ffffff',
-        display: 'standalone',
 
         icons: [
           {
