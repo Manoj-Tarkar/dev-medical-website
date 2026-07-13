@@ -5,7 +5,11 @@ import { HelmetProvider } from 'react-helmet-async'
 import App from './App.jsx'
 import { ThemeProvider } from './context/ThemeContext.jsx'
 import './styles/index.css'
+import { registerSW } from 'virtual:pwa-register'
 
+registerSW({
+  immediate: true
+})
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <HelmetProvider>
