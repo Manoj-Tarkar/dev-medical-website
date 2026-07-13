@@ -7,7 +7,7 @@ export const BUSINESS = {
   phone: '+91 7017488996',
   phoneRaw: '917017488996',
   whatsapp: '917017488996',
-  email: 'tarkarmanoj2006@gmail.com',
+  email: 'devmedicalpharmacy@gmail.com',
   hours: 'Monday – Sunday, 8:00 AM – 10:00 PM',
   mapEmbedSrc:
     'https://www.google.com/maps?q=Lajpat+Nagar,+Mathura,+Uttar+Pradesh&output=embed',
